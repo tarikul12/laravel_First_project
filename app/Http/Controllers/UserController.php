@@ -37,10 +37,10 @@ class UserController extends Controller
         // return view('user-form', ['name' => $request->name, 'email' => $request->email, 'password' => $request->password]);
     }
 
-    // function getUserInfo($name)
-    // {
-    //     return "Hello, $name";
-    // }
+    function getUserInfo($name)
+    {
+        return "Hello, $name";
+    }
 
     function getUserInfo2()
     {
