@@ -63,8 +63,10 @@
 
         <div class="input-container">
             <button type="submit">Add New User</button>
+           
         </div>
     </form>
+    <a href="/">Back</a>
 </div>
 
 

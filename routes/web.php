@@ -4,8 +4,10 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\userfromController;
 use App\Http\Middleware\AgeCheck;
 use App\Http\Middleware\CountryCheck;
+use App\Models\UserForm;
 
 Route::get('/', function () {
     return view('welcome');
@@ -37,9 +39,9 @@ Route::get('/about/{name}', function ($name) {
 
 
 Route::view('/user-form', 'user-form')->name('form');
+Route::post('/addUser', action: [userfromController::class,  'addUser']);
 
 Route::controller(UserController::class)->group(function () {
-    Route::post('/addUser', action:  'addUser');
     Route::get('/user/{name}',  'getUserInfo');
     Route::get('/home',  'getUserInfo2');
 });
@@ -60,6 +62,9 @@ Route::prefix( 'student')->group(function () {
        Route::get('studentShow', [HomeController::class,'studentShow']);
 
 });
+
+
+Route::get('/users',[UserController::class,'users']);
 
 
 
