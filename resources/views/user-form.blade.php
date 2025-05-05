@@ -1,7 +1,7 @@
 <div>
     <h1>Add User</h1>
 
-{{-- 
+    {{--
     @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -63,42 +63,43 @@
 
         <div class="input-container">
             <button type="submit">Add New User</button>
-           
+
         </div>
     </form>
-    <a href="/">Back</a>
+    <a href="/" class="btn btn-primary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">Back</a><br>
+    <a href="/users" class="btn btn-secondary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">User List</a>
 </div>
 
 
 <style>
-input {
-    border-block-color: red;
-    padding: 10px 5px;
-    margin: auto;
-    border-radius: 2px;
-}
+    input {
+        border-block-color: red;
+        padding: 10px 5px;
+        margin: auto;
+        border-radius: 2px;
+    }
 
-.input-container {
-    margin: 10px;
-}
+    .input-container {
+        margin: 10px;
+    }
 
-text {
-    color: yellow;
-    font-size: 20px;
-    font-weight: bold;
-}
+    text {
+        color: yellow;
+        font-size: 20px;
+        font-weight: bold;
+    }
 
-button {
-    background-color: orange;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    margin: 5px;
-}
+    button {
+        background-color: orange;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        margin: 5px;
+    }
 
-button:hover {
-    background-color: darkblue;
-}
+    button:hover {
+        background-color: darkblue;
+    }
 </style>

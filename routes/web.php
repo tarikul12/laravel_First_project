@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\userfromController;
+use App\Http\Controllers\userformController;
 use App\Http\Middleware\AgeCheck;
 use App\Http\Middleware\CountryCheck;
 use App\Models\UserForm;
@@ -39,7 +39,7 @@ Route::get('/about/{name}', function ($name) {
 
 
 Route::view('/user-form', 'user-form')->name('form');
-Route::post('/addUser', action: [userfromController::class,  'addUser']);
+Route::post('/addUser', action: [userformController::class,  'addUser']);
 
 Route::controller(UserController::class)->group(function () {
     Route::get('/user/{name}',  'getUserInfo');
@@ -51,7 +51,7 @@ Route::controller(UserController::class)->group(function () {
 // Route::get('/home', [UserController::class, 'getUserInfo2']);
 
 
-Route::get('/show', [HomeController::class, 'show']);
+// Route::get('/show', [HomeController::class, 'show']);
 
 // Route::view('student/studentAdd', 'studentAdd');
 // Route::view('student/studentShow', [HomeController::class,'studentShow']);
@@ -64,7 +64,11 @@ Route::prefix( 'student')->group(function () {
 });
 
 
-Route::get('/users',[UserController::class,'users']);
+Route::get('/users', action: [userformController::class, 'users']);
+Route::get('/users/show/{id}',   [UserFormController::class, 'show'])->name('users.show');
+Route::get('/users/edit/{id}',   [UserFormController::class, 'edit'])->name('users.edit');
+Route::post('/users/update/{id}',[UserFormController::class, 'update'])->name('users.update');
+Route::get('/users/delete/{id}', [UserFormController::class, 'destroy'])->name('users.destroy');
 
 
 
